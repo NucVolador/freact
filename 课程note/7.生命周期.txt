@@ -1,0 +1,86 @@
+constructor函数
+	
+	其实它是一个es6的构造函数，不算react独有的生命周期函数，但与其他生命周期函数类似
+
+
+
+
+第一条路！！！
+
+
+componentWillMount => render => componentDidMount 
+
+
+
+render函数
+
+	生命周期函数
+
+
+componentWillMount函数
+
+	在组件即将被挂载到页面的时刻自动执行（还没有被挂载渲染上去的时候），也就是在render前执行
+
+componentDidMount函数
+
+	在组件被挂载到页面上面后执行
+
+
+
+
+
+第二条路！！！
+
+
+
+
+
+componentWillReceiveProps =》 shouldComponentUpdate 返回true执行后续，若为false则不执行 =》 componentWillUpdate =》render =》 componentDidUpdate
+
+
+
+componentWillReceiveProps函数
+	
+	①当一个组件从父组件接收了参数
+	②只要父组件的render的函数被！！重新执行！！，则子组件的这个函数就会被执行
+	
+	注：必须是再次，首次加载是不会触发这个函数
+
+
+
+shouldComponentUpdate函数
+
+	当组件即将被更新之前，会被执行。
+		要求返回一个布尔类型的结果
+			返回的true则执行后面的周期函数，
+			返回的false则后续周期函数不执行，组件不更新
+
+
+componentWillUpdate函数
+	
+	组件被更新之前，它会自动执行，但它是在shouldComponentUpdate之后执行，根据返回值，返回true执行，返回false则不执行
+
+
+
+componentDidUpdate函数
+
+	组件更新之后，自动执行  	 
+
+
+
+
+
+
+
+第三条路！！！
+
+
+shouldComponentUpdate 还是看返回值true/false => componentWillUpdate => render =>componentDidUpdate
+
+
+
+
+
+componentWillUnmount
+
+	组件即将被从页面中移除时将会执行

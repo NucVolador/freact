@@ -1,0 +1,3 @@
+PropTypes（传入参数类型）
+
+DefaultProps（传入参数的默认值）

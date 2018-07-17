@@ -1,0 +1,8 @@
+ref是React直接操作dom元素的，ref={(dom)=>{}}
+	 参数dom指的是dom元素本身
+
+	ref与setState合用时常会出现ref获取不及时的情况，原因是因为setState是异步的，因此可以把ref相关的操作放在setState()的第二个参数中
+
+	setState()
+	第一个参数是可以是对象也可以是函数（返回一个对象），
+	第二个参数是回调函数

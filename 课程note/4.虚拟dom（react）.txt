@@ -1,0 +1,15 @@
+①jsx语法产生的虚拟dom的好处
+
+	减少了真实dom对象的生成以及真实dom对象的比较，取而代之是生成虚拟dom对象，把新旧虚拟dom对象进行比较（实质是比较js对象），从而极大的提高性能（比较真实的dom会调用webApi接口较耗性能）
+
+②jsx -> 虚拟dom ->真实dom
+
+	jsx语法由babel解析，jsx只是一个模板语言（可参造模板引擎），转化为虚拟dom（js对象），babel转化jsx后，相当于React.createElement(元素，{元素属性k/y}，元素中的内容可以是子元素可以是文本)
+
+	然后比较完虚拟dom对象后，通过浏览器引擎可以把虚拟dom转化为真实dom
+
+
+注！！！
+此处
+	react还能开发原生app（React Native），就是得益于jsx以及虚拟dom，
+	在jsx转化为虚拟dom后，在原生app开发中，再把虚拟dom转化为原生app组件，即可完成RN开发。（浏览器不识别原生app组件，原生app不识别真实dom对象）
