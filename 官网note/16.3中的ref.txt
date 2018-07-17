@@ -1,0 +1,28 @@
+①
+新版的ref设置
+
+	一般在constructor中通过
+		this.**ref = React.createRef();
+	或	this.**ref = (element) => {***}
+
+然后在组件中
+
+	<input ref={this.**ref} />
+
+为自定义组件增加ref时，需要在componentDidMount中挂载
+	this.**ref.current.***()
+	以此来激活
+仅对于class声明的组件有效
+
+函数式组件并不生效，因为函数式组件没有实例化
+
+	可在函数式内部来应用，详情见官网：
+	https://doc.react-china.org/docs/refs-and-the-dom.html
+
+②
+操作ref对应的dom节点
+	this.**ref.current属性来操作dom节点
+
+	
+③可以通过设置回调，来实现父组件操纵子组件的ref属性
+	官网最后一个demo
