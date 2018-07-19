@@ -1,0 +1,37 @@
+.hide{
+    animation:hide 1s forwards;
+}
+
+.show{
+    animation:show 1s forwards;
+}
+
+@keyframes hide{
+    0%{
+        opacity: 1;
+        color:red;
+    }
+    50%{
+        opacity: .5;
+        color: blue;
+    }
+    100%{
+        opacity: 0;
+        color:yellow;
+    }
+}
+
+@keyframes show{
+    0%{
+        opacity: 0;
+        color:red;
+    }
+    50%{
+        opacity: .5;
+        color: blue;
+    }
+    100%{
+        opacity: 1;
+        color:yellow;
+    }
+}

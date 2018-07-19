@@ -5,4 +5,5 @@ ref是React直接操作dom元素的，ref={(dom)=>{}}
 
 	setState()
 	第一个参数是可以是对象也可以是函数（返回一个对象），
+	(prevState, props) => { return {} }
 	第二个参数是回调函数

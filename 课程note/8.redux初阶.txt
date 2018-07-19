@@ -1,0 +1,76 @@
+redux主要用于处理组件间的数据传递，
+
+	工作原理：
+	
+	①reactComponet把要传递的数据打包
+
+	②通过action进行发送
+
+	③发送至store仓库
+	
+	④store仓库把接收到的数据通过reducer方法来把数据存放到store对应的位置内
+
+	⑤store会告知其他组件，相关数据已经更新
+
+	⑥其他组件重新向store中获取state，进而重新渲染，完成了数据的传递
+
+
+
+注意点
+
+①只有一个store
+
+②只有store才能更新store内的内容，reducer不能更新
+
+	在reducer中，第一个参数为state，我们只能获取state并进行深拷贝，然后操作拷贝的副本，不能操作原state，原state是不被允许修改的！
+
+	当需要改变state时，reducer返回一个newState，然后store用newState替换原来的state
+
+
+③reducer是个纯函数
+
+	纯函数：给定固定的输入，就会有固定的输出，而且不会有任何副作用。（任何时刻，给定固定的输入，输出总是固定不变的）
+
+	一般含有setTimeout/ajax请求/Date()时就会产生不同输出，因此不叫纯函数。（不能有异步操作，不能有时间操作）
+
+	对state的直接修改会产生副作用!
+
+
+
+
+redux执行时相关函数调用
+
+
+①createStore(reducer[,redux-devtools])
+
+	创建store数据仓库，并
+
+②store.dispatch(action)
+
+	组件通过该函数发送action，来改变store内的信息
+
+③store.getState()
+
+	用该函数来获取store中的state信息
+
+④store.subscribe(()=>{})
+
+	一旦store中的内容发生改变，组件会立即调用该方法中的回调函数。
+
+
+
+
+
+
+
+为了提高可维护性
+
+	使用action分离和actionType分离的原则，方便action的管理以及方便代码错误的调试
+
+
+
+
+
+
+
+
