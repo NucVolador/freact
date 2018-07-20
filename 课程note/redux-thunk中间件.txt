@@ -1,0 +1,9 @@
+redux中间件是把action与store之间连接的函数dispatch进行了重写
+
+	重写之后，dispatch可以识别接收的参数是函数还是对象，
+	是函数则执行函数，是对象则直接发送给store
+	
+	
+	函数可以在内部写逻辑，完成action的发送，
+
+	然后再dispatch(action函数)

@@ -1,6 +1,11 @@
 import React,{Component,Fragment} from 'react';
 import { Input,Button,List } from 'antd';
-import store from '../reduxLower/store'
+import store from '../reduxLower/store';
+import {
+    getInputChangeAction,
+    getListAction,
+    getListDeleteAction
+} from '../reduxLower/store/createActions'
 
 import 'antd/dist/antd.css';
 
@@ -41,23 +46,15 @@ class TodoList extends Component{
         );
     }
     handleChange = (e) => {
-        const action = {
-            type : "inputValue_change",
-            value : e.target.value
-        };
+        const action = getInputChangeAction(e.target.value);
         store.dispatch(action);
     }
     handleClick = () => {
-        const action = {
-            type : "list_change",
-        }
+        const action = getListAction();
         store.dispatch(action);
     }
     handleDelete(index){
-        const action = {
-            type : 'list_delete',
-            value : index
-        }
+        const action = getListDeleteAction(index);
         store.dispatch(action);
     }
 }
