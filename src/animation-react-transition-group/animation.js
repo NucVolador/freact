@@ -15,11 +15,12 @@ class Animation extends Component{
         const {list,show} = this.state;
         return (
             <Fragment>
-                <TransitionGroup>
+                {/*<TransitionGroup>*/}
                     {
                         list.map((item,index)=>{
                             return(
                                 <CSSTransition
+                                    in={show}
                                     timeout={1000}
                                     classNames="fade"
                                     unmountOnExit
@@ -31,7 +32,7 @@ class Animation extends Component{
                             );
                         })
                     }
-                </TransitionGroup>
+                {/*</TransitionGroup>*/}
                 <button onClick={this.handleClick}>toggle</button>
             </Fragment>
 
