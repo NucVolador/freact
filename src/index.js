@@ -21,6 +21,8 @@ import ReactDOM from 'react-dom';
 //     </Provider>
 // )
 import App from './jianshu/App';
+import './jianshu/statics/css/style';
+import './jianshu/statics/font/iconfont'
 
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<App/>, document.getElementById('root'));

@@ -1,6 +1,6 @@
 import React,{Component,Fragment} from 'react';
 import { CSSTransition ,TransitionGroup} from 'react-transition-group';
-import './style.css'
+import styles from './style.css'
 
 class Animation extends Component{
     constructor(props){
@@ -21,8 +21,8 @@ class Animation extends Component{
                             return(
                                 <CSSTransition
                                     in={show}
-                                    timeout={1000}
-                                    classNames="fade"
+                                    timeout={500}
+                                    classNames={`fade`}
                                     unmountOnExit
                                     appear={true}
                                     key={index}
@@ -32,6 +32,7 @@ class Animation extends Component{
                             );
                         })
                     }
+                    <div className={styles.test}>aaaaaaaaa</div>
                 {/*</TransitionGroup>*/}
                 <button onClick={this.handleClick}>toggle</button>
             </Fragment>

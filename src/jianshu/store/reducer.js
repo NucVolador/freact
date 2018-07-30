@@ -1,8 +1,12 @@
-const storeDefault = {
-    inputValue : '',
-    list : []
-}
+import { combineReducers } from 'redux-immutable'
+import { reducer as Home} from '../pages/home/store';
+import { reducer as Header} from '../component/header/store';
 
-export default ( state = storeDefault , action ) => {
-    return state
-}
+
+const reducer = combineReducers({
+    Header,
+    Home
+})
+
+
+export default reducer;
